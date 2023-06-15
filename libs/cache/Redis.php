@@ -18,6 +18,7 @@ class Redis extends Cache
         }
         $this->redis = new \Redis();
         $this->redis->connect($host, $port);
+        $this->redis->auth('password');
     }
 
     public function set($key, $data, $expire = 86400)
